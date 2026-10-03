@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="SYSTEM — Personal Leveling System for a 37-Day Journey">
+<title>SYSTEM — Personal Leveling System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/system.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23060b16'/><path d='M50 14 84 50 50 86 16 50Z' fill='none' stroke='%2339a0ff' stroke-width='7'/><path d='M50 34 66 50 50 66 34 50Z' fill='%2339a0ff'/></svg>">
+</head>
+<body>
+
+<!-- ============ SVG ICON SPRITE (original artwork) ============ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.2 12 3.5l9 7.7V21h-6v-6H9v6H3z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-quest" viewBox="0 0 24 24"><path d="M12 2.5 21 8v8l-9 5.5L3 16V8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m8.4 11.8 2.6 2.6 4.6-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-stats" viewBox="0 0 24 24"><path d="M4 20V11M9.3 20V5M14.7 20v-7M20 20V8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M2.5 21.5h19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M7 5.5H4a3.2 3.2 0 0 0 3.4 4M17 5.5h3a3.2 3.2 0 0 1-3.4 4M12 14v3.5M8.5 21h7M9.5 17.5h5V21h-5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+  <symbol id="i-journey" viewBox="0 0 24 24"><rect x="3.2" y="5" width="17.6" height="16" rx="2.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.2 9.6h17.6M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="m8.6 15 2.3 2.3 4.5-4.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.6v3M12 18.4v3M21.4 12h-3M5.6 12h-3M18.6 5.4l-2.1 2.1M7.5 16.5l-2.1 2.1M18.6 18.6l-2.1-2.1M7.5 7.5 5.4 5.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13L7.5 14.5H4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18 6.5a7.7 7.7 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9.5h3.5L12 5.5v13L7.5 14.5H4z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m16 9.5 5 5M21 9.5l-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2.7s5.4 4.1 5.4 9.1a5.4 5.4 0 1 1-10.8 0c0-1.7.9-3.4 1.8-4.6.4 1.2 1.1 2 2 2.3-.3-2.6.6-5 1.6-6.8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.4 2.5 5 13.4h5.6L10 21.5 18.6 10H13z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4.6" y="10.5" width="14.8" height="10.4" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M8.2 10.5V7.8a3.8 3.8 0 0 1 7.6 0v2.7" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m4.5 12.5 5 5L19.5 6.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M12.5 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3.5v11M7.5 10.5 12 15l4.5-4.5M4.5 19.5h15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M4.5 19.5h15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.8 20 6v6.2c0 4.4-3.3 7.6-8 9-4.7-1.4-8-4.6-8-9V6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 6.8V12l3.4 2.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+</svg>
+
+<!-- ============ BOOT / FIRST-TIME EXPERIENCE ============ -->
+<div class="boot" id="bootScreen" hidden>
+  <div class="boot-inner">
+    <div class="boot-emblem" aria-hidden="true">
+      <svg viewBox="0 0 120 120" class="emblem-svg">
+        <path d="M60 6 106 60 60 114 14 60Z" class="emblem-o"/>
+        <path d="M60 26 88 60 60 94 32 60Z" class="emblem-i"/>
+        <path d="M60 44 74 60 60 76 46 60Z" class="emblem-c"/>
+      </svg>
+    </div>
+    <div class="boot-log" id="bootLog" aria-live="polite"></div>
+    <form class="boot-form" id="bootForm" hidden>
+      <label class="boot-label" for="playerNameInput">PLAYER NAME</label>
+      <input class="sys-input boot-input" id="playerNameInput" type="text" maxlength="24" placeholder="ENTER YOUR NAME" autocomplete="off" spellcheck="false">
+      <p class="boot-hint">37-DAY JOURNEY · DAY 01 IS WAITING</p>
+      <button class="btn btn-primary btn-lg" type="submit" id="startSystemBtn">[ START SYSTEM ]</button>
+      <button class="btn btn-ghost btn-sm" type="button" id="bootSoundBtn">🔊 ENABLE SOUND</button>
+    </form>
+  </div>
+  <div class="boot-scan" aria-hidden="true"></div>
+</div>
+
+<!-- ============ APP SHELL ============ -->
+<div class="app" id="app" hidden>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- Desktop sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="brand" data-nav="dashboard" role="button" tabindex="0">
+      <div class="brand-mark"><svg viewBox="0 0 40 40"><path d="M20 3 37 20 20 37 3 20Z" class="bm-o"/><path d="M20 12 28 20 20 28 12 20Z" class="bm-i"/></svg></div>
+      <div class="brand-text"><span class="brand-name">SYSTEM</span><span class="brand-sub">PERSONAL LEVELING</span></div>
+    </div>
+    <nav class="side-nav" id="sideNav">
+      <button class="nav-item" data-nav="dashboard"><svg class="ic"><use href="#i-home"/></svg><span>DASHBOARD</span></button>
+      <button class="nav-item" data-nav="quests"><svg class="ic"><use href="#i-quest"/></svg><span>QUEST</span></button>
+      <button class="nav-item" data-nav="stats"><svg class="ic"><use href="#i-stats"/></svg><span>STATS</span></button>
+      <button class="nav-item" data-nav="achievements"><svg class="ic"><use href="#i-trophy"/></svg><span>ACHIEVEMENT</span></button>
+      <button class="nav-item" data-nav="journey"><svg class="ic"><use href="#i-journey"/></svg><span>JOURNEY</span></button>
+      <button class="nav-item" data-nav="settings"><svg class="ic"><use href="#i-gear"/></svg><span>SETTINGS</span></button>
+    </nav>
+    <div class="side-foot">
+      <div class="side-player">
+        <div class="avatar" id="sideAvatar">P</div>
+        <div class="side-player-meta">
+          <div class="side-player-name" id="sidePlayerName">PLAYER</div>
+          <div class="side-player-lv" id="sidePlayerLv">LEVEL 01</div>
+        </div>
+      </div>
+      <div class="side-exp"><div class="bar bar-sm"><div class="bar-fill" id="sideExpBar" style="width:0%"></div></div></div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="topbar-title" id="topbarTitle">DASHBOARD</div>
+        <div class="chip chip-day" id="topbarDay">DAY 01 / 37</div>
+      </div>
+      <div class="topbar-right">
+        <div class="chip chip-streak" id="topbarStreak"><svg class="ic ic-sm"><use href="#i-flame"/></svg><span>0</span></div>
+        <button class="icon-btn" id="soundToggle" title="Toggle sound" aria-label="Toggle sound"><svg class="ic"><use href="#i-sound"/></svg></button>
+      </div>
+    </header>
+
+    <div class="page" id="pageContent"><!-- rendered by JS --></div>
+  </main>
+
+  <!-- Mobile bottom nav -->
+  <nav class="bottom-nav" id="bottomNav">
+    <button class="bnav-item" data-nav="dashboard"><svg class="ic"><use href="#i-home"/></svg><span>HOME</span></button>
+    <button class="bnav-item" data-nav="quests"><svg class="ic"><use href="#i-quest"/></svg><span>QUEST</span></button>
+    <button class="bnav-item" data-nav="stats"><svg class="ic"><use href="#i-stats"/></svg><span>STATS</span></button>
+    <button class="bnav-item" data-nav="achievements"><svg class="ic"><use href="#i-trophy"/></svg><span>AWARD</span></button>
+    <button class="bnav-item" data-nav="journey"><svg class="ic"><use href="#i-journey"/></svg><span>TRIP</span></button>
+    <button class="bnav-item" data-nav="settings"><svg class="ic"><use href="#i-gear"/></svg><span>SET</span></button>
+  </nav>
+</div>
+
+<!-- ============ OVERLAYS ============ -->
+<div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+<div class="modal-overlay" id="modalOverlay" hidden>
+  <div class="modal" id="modalBox" role="dialog" aria-modal="true"></div>
+</div>
+
+<div class="levelup" id="levelupOverlay" hidden>
+  <canvas class="levelup-canvas" id="levelupCanvas"></canvas>
+  <div class="levelup-inner">
+    <div class="levelup-rings"><span></span><span></span><span></span></div>
+    <div class="levelup-tag">[ SYSTEM ]</div>
+    <div class="levelup-title">LEVEL UP</div>
+    <div class="levelup-num" id="levelupNum">02</div>
+    <div class="levelup-sub" id="levelupSub">+1 LEVEL</div>
+    <button class="btn btn-ghost btn-sm" id="levelupClose">CONTINUE</button>
+  </div>
+</div>
+
+<div class="flash-layer" id="flashLayer" aria-hidden="true"></div>
+<input type="file" id="importFile" accept="application/json,.json" hidden>
+
+<script src="js/config.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/store.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/sync.js"></script>
+<script src="js/pages/dashboard.js"></script>
+<script src="js/pages/quests.js"></script>
+<script src="js/pages/stats.js"></script>
+<script src="js/pages/achievements.js"></script>
+<script src="js/pages/journey.js"></script>
+<script src="js/pages/settings.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
