@@ -1,15 +1,22 @@
-# WhynotGenZ Preview Run Doc
+# SYSTEM Preview Run Doc
 
 ## How to Reproduce
-No build step needed — this is a pure static HTML/CSS/JS project. All files exist in the project root.
+No build step — pure static HTML/CSS/JS. The app source lives in `system/`;
+the root `index.html` only redirects to it.
 
 ## How to Run
-Start a Python HTTP server from the project root:
+Start the bundled static server from the project root (no python/node needed):
 
 ```
-python -m http.server 8080 --directory "D:/whynotgenz"
+powershell -NoProfile -ExecutionPolicy Bypass -File .freebuff/serve.ps1 -Port 8777
 ```
 
-Then open `http://127.0.0.1:8080/index.html` in a browser.
+Then open `http://127.0.0.1:8777/` in a browser (it redirects to `system/`).
 
-For the preview, use port 8080 (or the next free port).
+If Python is available instead:
+
+```
+python -m http.server 8777
+```
+
+For the preview, use port 8777 (or the next free port).
